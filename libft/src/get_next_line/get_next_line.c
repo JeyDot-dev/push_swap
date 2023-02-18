@@ -6,10 +6,10 @@
 /*   By: jsousa-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:46:10 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/01/23 14:33:44 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/02/18 23:42:15 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libft.h"
+#include "libft.h"
 
 char	*g_getline(char *sttc_str)
 {

@@ -6,10 +6,10 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:24:02 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/01/23 14:33:36 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/02/18 23:42:27 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libft.h"
+#include "libft.h"
 
 char	*g_free(char *str)
 {
