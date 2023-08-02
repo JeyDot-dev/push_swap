@@ -5,9 +5,8 @@ Push swap rules :
 2:	'a' contains random integers (- +).
 
 3:	Must sort from smallest to larger following stric rules.
-	3a.	sa (swap a) :	swap 2 first items of the stack. Does nothing if only 1
-						or 0 items in th stack.
-	3b. sb (swap b) :	"	"	"	"	"	"	"	"	"	"	"	'	"	".
+	3a.	sa (swap a) :	swap 2 first items of the stack. Does nothing if only 1 or 0 items in th stack.
+	3b.	sb (swap b) :	"	"	"	"	"	"	"	'	"	".
 	3c.	ss (sa & sb).
 
 	3d.	pa (push a)	:	Take first item from 'b' and puts on top of 'a'.
