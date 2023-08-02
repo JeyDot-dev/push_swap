@@ -13,7 +13,7 @@ Push swap rules :
 	3e.	pb (push b)	:	"	"	"	"	"	"'a'	"	"	"	"	'b'.
 
 	3f.	ra (rotate a):	Shifts every element and puts first element to last.
-	3g. rb (rotate b):	"	"	"	"	"	"	"	"	"	"	"	"	"	.
+	3g.	rb (rotate b):	"	"	"	"	"	"	"	"	"	"	"	"	"	.
 	3h.	rr	(ra & rb).
 
 	3i. rra (reverse ra): Shifts left, last element becomes first.
