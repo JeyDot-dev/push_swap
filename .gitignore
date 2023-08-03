@@ -53,3 +53,4 @@ dkms.conf
 *.swp
 push_swap
 .DS_Store
+push_swap_visualizer
