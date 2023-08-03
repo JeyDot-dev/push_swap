@@ -35,7 +35,7 @@ INC			:=	libft/inc/	inc/
 
 LIB			:=	ft
 INC			:=	inc/ libft/
-SRC			:=	push_swap.c
+SRC			:=	main.c	list_utils.c
 #FRAMEWORK	:=	OpenGL	AppKit
 
 SRC			:=	$(SRC:%=$(SRC_D)%)

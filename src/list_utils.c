@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/03 13:23:56 by jsousa-a         ###   ########.fr       */
+/*   Created: 2023/08/03 13:24:44 by jsousa-a          #+#    #+#             */
+/*   Updated: 2023/08/03 13:26:25 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft.h"
+#include "push_swap.h"
 
-typedef struct s_stack
-{
-  long             number;
-  struct s_stack  *next;
-  struct s_stack  *last;
-}        t_stack
-#endif

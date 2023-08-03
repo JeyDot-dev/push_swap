@@ -1,6 +1,6 @@
 Push swap rules :
 
-1:	There is 2 stacks. 'a' & 'b'.
+1:	There are 2 stacks. 'a' & 'b'.
 
 2:	'a' contains random integers (- +).
 
