@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/03 16:09:00 by jsousa-a         ###   ########.fr       */
+/*   Created: 2023/08/03 16:04:25 by jsousa-a          #+#    #+#             */
+/*   Updated: 2023/08/03 16:08:23 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft.h"
+#include "push_swap.h"
 
-typedef struct s_stack
+void	error_exit(void)
 {
-  long             number;
-  struct s_stack  *next;
-  struct s_stack  *last;
-}        t_stack
-#endif
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
+
+void	free_stack(t_stack *head)
+{
+	t_stack *temp;
+
+	while (head)
+	{
+		temp = head->next;
+		free(head);
+		head = temp;
+	}
+}
