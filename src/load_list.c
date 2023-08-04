@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_reverse.c                                   :+:      :+:    :+:   */
+/*   load_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 16:41:15 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/04 15:52:58 by jsousa-a         ###   ########.fr       */
+/*   Created: 2023/08/04 15:23:33 by jsousa-a          #+#    #+#             */
+/*   Updated: 2023/08/04 16:33:35 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rr(t_stack **stack, char letter)
+void	load_list(int ac, char **av, t_stack **stack)
 {
-	t_stack *temp;
+	int	i;
+	long long int check;
 
-	temp = find_penultimate(*stack);
-	temp->next = NULL;
-	temp->last = temp;
-	(*stack)->last->next = *stack;
-	(*stack)->last->last = temp;
-	put_top((*stack)->last, stack);
-	ft_printf("rr%c\n", letter);
+	i = ac - 1;
+	while (i > 0)
+	{
+		check = ps_atoi(av[i]);
+		if (check > 2147483647)
+		{
+			free_stack(*stack);
+			error_exit();
+		}
+		put_top(new_item((int) check), stack);
+		i--;
+	}
 }

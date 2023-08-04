@@ -35,7 +35,7 @@ INC			:=	libft/inc/	inc/
 
 LIB			:=	ft
 INC			:=	inc/ libft/
-SRC			:=	main.c	list_utils.c
+SRC			:=	main.c	list_utils.c	load_list.c	rotate_reverse.c	pswap_atoi.c	free_utils.c
 #FRAMEWORK	:=	OpenGL	AppKit
 
 SRC			:=	$(SRC:%=$(SRC_D)%)
@@ -72,7 +72,7 @@ $(NAME)	:	$(OBJ)
 #------------------------OBJ COMPILATION-----------------------------
 $(BUILD_D)%.o	:	$(SRC_D)%.c
 			$(DIR_DUP)
-			$(CC) $(CFLAGS) $(CPPFLAGS) -O2 -c $< -o $@
+			$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 			echo created $(@F)
 
 -include	${DEPS}
