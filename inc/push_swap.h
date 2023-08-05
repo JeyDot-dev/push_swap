@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/05 11:05:48 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/05 15:58:59 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,23 @@ typedef struct s_stack
   struct s_stack  *next;
   struct s_stack  *last;
 }        t_stack;
+typedef struct	s_instructions
+{
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	score;
+	int	total;
+	struct	s_instructions	*next;
+}				t_instructions;
 
 //			list_utils
 void	put_top(t_stack *newItem, t_stack **head);
@@ -43,4 +60,6 @@ long long int	ps_atoi(const char *str);
 //			free_utils
 void	error_exit(void);
 void	free_stack(t_stack *head);
+//			check_order
+int	check_order(t_stack	*stack);
 #endif
