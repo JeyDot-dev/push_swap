@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/04 16:28:01 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/05 11:05:48 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,19 @@ typedef struct s_stack
 void	put_top(t_stack *newItem, t_stack **head);
 t_stack	*new_item(int number);
 t_stack *find_penultimate(t_stack *head);
-void	print_stack(t_stack *head, char letter);
+t_stack *find_last(t_stack *head);
+void	print_stacks(t_stack *stackA, t_stack *stackB);
 //			load_list
 void	load_list(int ac, char **av, t_stack **stack);
 //			rotate_reverse
-void	rr(t_stack **stack, char letter);
+void	rrx(t_stack **stack, char letter);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	rx(t_stack **stack, char letter);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+//			swap_push
+void	px(t_stack **from_stack, t_stack **to_stack, char to_letter);
+void	sx(t_stack **stack, char letter);
+void	ss(t_stack **stackA, t_stack **stackB);
 //			pswap_atoi
 long long int	ps_atoi(const char *str);
 //			free_utils
