@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:24:44 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/05 10:49:09 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/06 14:58:40 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ void	print_stacks(t_stack *stackA, t_stack *stackB)
 		}
 		ft_printf("\n");
 	}
+		ft_printf("\n");
 }

@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/06 11:25:38 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/06 12:57:10 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_order(t_stack	*stack);
 //			calc_total
 t_instructions	calc_total(t_instructions instructions);
 //			smallest_biggest
-t_instructions	calc_rotations(int slot, t_stack *b, t_instructions instructions);
+t_instructions	calc_rotations(int slot, int elements, t_instructions instructions);
 t_instructions	biggest(int num, t_stack *b, t_instructions instructions);
 t_instructions	smallest(int num, t_stack *b, t_instructions instructions);
 t_instructions	biggest_smallest(t_instructions instructions, int num, t_stack *b);

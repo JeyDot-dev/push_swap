@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:54:17 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/06 11:24:37 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/06 15:36:00 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ t_instructions	calc_total(t_instructions instructions)
 	instructions.total += instructions.ss;
 	instructions.total += instructions.pa;
 	instructions.total += instructions.pb;
+//	ft_printf("calc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, total:%i\n", instructions.ra, instructions.rra,
+//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa, instructions.total);
 	return (instructions);
 }
