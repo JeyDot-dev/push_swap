@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/05 15:58:59 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/06 11:25:38 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ t_stack	*new_item(int number);
 t_stack *find_penultimate(t_stack *head);
 t_stack *find_last(t_stack *head);
 void	print_stacks(t_stack *stackA, t_stack *stackB);
+//			list_utils_two
+int	count_elements(t_stack *stack);
 //			load_list
 void	load_list(int ac, char **av, t_stack **stack);
 //			rotate_reverse
@@ -62,4 +64,13 @@ void	error_exit(void);
 void	free_stack(t_stack *head);
 //			check_order
 int	check_order(t_stack	*stack);
+//			calc_total
+t_instructions	calc_total(t_instructions instructions);
+//			smallest_biggest
+t_instructions	calc_rotations(int slot, t_stack *b, t_instructions instructions);
+t_instructions	biggest(int num, t_stack *b, t_instructions instructions);
+t_instructions	smallest(int num, t_stack *b, t_instructions instructions);
+t_instructions	biggest_smallest(t_instructions instructions, int num, t_stack *b);
+//			best_instructions
+t_instructions	best_instructions(t_stack *a, t_stack *b);
 #endif

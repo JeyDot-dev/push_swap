@@ -35,7 +35,8 @@ INC			:=	libft/inc/	inc/
 
 LIB			:=	ft
 INC			:=	inc/ libft/
-SRC			:=	main.c	list_utils.c	load_list.c	rotate_reverse.c	pswap_atoi.c	free_utils.c	swap_push.c check_order.c
+SRC			:=	best_instructions.c check_order.c list_utils.c load_list.c pswap_atoi.c smallest_biggest.c \
+				calc_total.c free_utils.c list_utils_two.c main.c rotate_reverse.c swap_push.c
 #FRAMEWORK	:=	OpenGL	AppKit
 
 SRC			:=	$(SRC:%=$(SRC_D)%)
