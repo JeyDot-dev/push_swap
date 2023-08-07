@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:22:15 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/06 15:36:18 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:39:03 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_instructions	find_slot(t_instructions instructions, int num, t_stack *b)
 			instructions.rb = 0;
 			instructions.rrb = try - try % tries;
 		}
+//			ft_printf("rb = %i\n", instructions.rb);
 	}
 	if (b->next && try > tries && tries % 2 == 1)
 		instructions.rrb += 1;
@@ -56,6 +57,7 @@ t_instructions	find_slot(t_instructions instructions, int num, t_stack *b)
 	{
 		instructions.rrb = 0;
 		instructions.rb = 0;
+		tries = 0;
 	}
 	if (tries == 1)
 	{
@@ -94,7 +96,7 @@ t_instructions	best_instructions(t_stack *a, t_stack *b)
 	{
 		instructions[best] = instructions_init();
 		ra += 1;
-		instructions[best].rra += ra;
+		instructions[best].ra += ra;
 		instructions[best] = fill_instructions(a->number, b, instructions[best]);
 		if (instructions[0].total < instructions[1].total
 			|| instructions[0].total == instructions[1].total)

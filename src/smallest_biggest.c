@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 10:26:23 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/06 15:22:19 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/07 10:39:11 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_instructions	calc_rotations(int slot, int mid_point, t_instructions instructions)
 {
+//	ft_printf("slot = %i\n", slot);
 	if (slot > 1 && mid_point > 1 &&  slot > mid_point)
 	{
-//	ft_printf("slot = %i\n", slot);
 		instructions.rrb = slot - slot % mid_point;
 		instructions.rb = -1;
 		if (mid_point % 2)
