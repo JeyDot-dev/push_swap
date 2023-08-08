@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:54:17 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/07 10:39:18 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/08 03:37:23 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,30 @@ t_instructions	simplify_total(t_instructions instructions)
 	}
 	return (instructions);
 }
+t_instructions	instructions_variant(t_instructions instructions, int mode)
+{
+	if (mode == 1)
+	{
+		instructions.ra = 0;
+		instructions.rb = 0;
+	}
+	else if(mode == 2)
+	{
+		instructions.rra = 0;
+		instructions.rrb = 0;
+	}
+	else if(mode == 3)
+	{
+		instructions.ra = 0;
+		instructions.rrb = 0;
+	}
+	else if(mode == 4)
+	{
+		instructions.rra = 0;
+		instructions.rb = 0;
+	}
+	return (instructions);
+}
 /*
 	int	ra;
 	int	rb;
@@ -53,7 +77,7 @@ t_instructions	simplify_total(t_instructions instructions)
 	int	total;
 	*/
 t_instructions	calc_total(t_instructions instructions)
-{	
+{
 	instructions.total = 0;
 	instructions = simplify_total(instructions);
 	instructions.total += instructions.ra;
@@ -67,7 +91,33 @@ t_instructions	calc_total(t_instructions instructions)
 	instructions.total += instructions.ss;
 	instructions.total += instructions.pa;
 	instructions.total += instructions.pb;
-//	ft_printf("calc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, total:%i\n", instructions.ra, instructions.rra,
-//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa, instructions.total);
 	return (instructions);
+}
+t_instructions	best_total(t_instructions instructions)
+{	
+	int	i;
+	int	index;
+	int	tmp;
+	t_instructions	incts[4];
+
+	i = -1;
+	instructions.rra = instructions.sizeA - instructions.ra;
+	instructions.rrb = instructions.sizeB - instructions.rb;
+//	ft_printf("--PREcalc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, sizeA:%i, sizeB:%i total:%i\n", instructions.ra, instructions.rra,
+//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa,
+//				instructions.sizeA, instructions.sizeB, instructions.total);
+	while (++i < 4)
+		incts[i] = calc_total(instructions_variant(instructions, i + 1));
+	i = 0;
+	index = 0;
+	tmp = incts[i].total;
+	while (++i < 4)
+	{
+		if (incts[i].total < tmp)
+			index = i;
+	}
+//	ft_printf("calc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, sizeA:%i, sizeB:%i total:%i\n", instructions.ra, instructions.rra,
+//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa,
+//				instructions.sizeA, instructions.sizeB, instructions.total);
+	return (incts[index]);
 }

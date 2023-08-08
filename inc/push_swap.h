@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/06 12:57:10 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/08 02:07:44 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ typedef struct	s_instructions
 	int	ss;
 	int	pa;
 	int	pb;
-	int	score;
+	int	sizeA;
+	int	sizeB;
 	int	total;
 	struct	s_instructions	*next;
 }				t_instructions;
 
+//			main.c
+void	cmd_processor(t_stack **a, t_stack **b, t_instructions instructions);
 //			list_utils
 void	put_top(t_stack *newItem, t_stack **head);
 t_stack	*new_item(int number);
@@ -65,12 +68,19 @@ void	free_stack(t_stack *head);
 //			check_order
 int	check_order(t_stack	*stack);
 //			calc_total
-t_instructions	calc_total(t_instructions instructions);
+t_instructions	best_total(t_instructions instructions);
 //			smallest_biggest
 t_instructions	calc_rotations(int slot, int elements, t_instructions instructions);
 t_instructions	biggest(int num, t_stack *b, t_instructions instructions);
 t_instructions	smallest(int num, t_stack *b, t_instructions instructions);
 t_instructions	biggest_smallest(t_instructions instructions, int num, t_stack *b);
 //			best_instructions
+t_instructions	instructions_init(t_stack *a, t_stack *b);
 t_instructions	best_instructions(t_stack *a, t_stack *b);
+//			fix_order
+void	fix_order(t_stack **a);
+//			three_sort
+void	three_sort(t_stack **a);
+//			low_sort
+void	low_sort(t_stack **a, t_stack **b);
 #endif
