@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:24:51 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 04:10:04 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/08 04:36:19 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,7 @@ int	main(int ac, char **av)
 		px(&b, &a, 'a');
 //	print_stacks(a, b);
 	fix_order(&a);
-
 //	print_stacks(a, b);
 //	ft_printf("ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, total:%i\n", instructions.ra, instructions.rra,
 //				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa, instructions.total);
-
 }
