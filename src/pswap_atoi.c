@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:16:03 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/04 15:54:30 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/17 16:20:39 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ long long int	ps_atoi(const char *str)
                 nb += *str - 48;
                 str++;
         }
+		if (*str)
+			return(2147483648);
         if (isneg == 1)
 			nb *= -1;
 		if (nb > 2147483647 || nb < -2147483648)

@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:24:51 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 04:36:19 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/17 16:58:06 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	if (ac < 2)
+		error_exit(NULL);
 	load_list(ac, av, &a);
 	if (count_elements(a) > 10)
 	{

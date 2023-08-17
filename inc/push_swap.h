@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:17:59 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 02:07:44 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/08/17 16:56:04 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ss(t_stack **stackA, t_stack **stackB);
 //			pswap_atoi
 long long int	ps_atoi(const char *str);
 //			free_utils
-void	error_exit(void);
+void	error_exit(t_stack *stack);
 void	free_stack(t_stack *head);
 //			check_order
 int	check_order(t_stack	*stack);
