@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:22:15 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 03:36:17 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:49:35 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_instructions	instructions_init(t_stack *a, t_stack *b)
 {
 	t_instructions	instructions;
+
 	if (a)
 		instructions.sizeA = count_elements(a);
 	if (b)
@@ -35,10 +36,10 @@ t_instructions	instructions_init(t_stack *a, t_stack *b)
 	instructions.total = 2146483647;
 	return (instructions);
 }
+
 t_instructions	find_slot(t_instructions instructions, int num, t_stack *b)
 {
 	instructions.rb = 1;
-
 	while (b->next && !(num < b->number && num > b->next->number))
 	{
 		b = b->next;
@@ -49,43 +50,41 @@ t_instructions	find_slot(t_instructions instructions, int num, t_stack *b)
 		instructions.rrb = 0;
 		instructions.rb = 0;
 	}
-//			ft_printf("Find slot : ra:%i, rra:%i, rb:%i, rrb:%i\n", instructions.ra, instructions.rra, instructions.rb, instructions.rrb);
 	return (instructions);
 }
-t_instructions	fill_instructions(int num, t_stack *b, t_instructions instructions)
+
+t_instructions	fill_instructions(int num, t_stack *b, t_lel lel)
 {
-//			ft_printf("---num = %i ---\nfill 1\n", num);
 	if (num > b->number && num < b->last->number)
-		return (best_total(instructions));
-//			ft_printf("fill 2\n");
-	instructions = find_slot(instructions, num, b);
-	if (instructions.rrb || instructions.rb)
-		return (best_total(instructions));
-//			ft_printf("fill 3\n");
-	instructions = biggest_smallest(instructions, num, b);
-	if (instructions.rrb >= 0 || instructions.rb >= 0)
-		return (best_total(instructions));
-	//		ft_printf("fill 4\n");
-	return (instructions_init(NULL, NULL));
+		return (best_total(lel));
+	lel = find_slot(lel, num, b);
+	if (lel.rrb || lel.rb)
+		return (best_total(lel));
+	lel = biggest_smallest(lel, num, b);
+	if (lel.rrb >= 0 || lel.rb >= 0)
+		return (best_total(lel));
+	return (lel_init(NULL, NULL));
 }
+
 t_instructions	best_instructions(t_stack *a, t_stack *b)
 {
 	t_instructions	instructions[2];
 	int				best;
 	int				ra;
-	t_stack			*headA;
+	t_stack			*head_a;
 
 	best = 0;
 	ra = -1;
-	headA = a;
-	instructions[0] = instructions_init(headA, b);
-	instructions[1] = instructions_init(headA, b);
+	head_a = a;
+	instructions[0] = instructions_init(head_a, b);
+	instructions[1] = instructions_init(head_a, b);
 	while (a)
 	{
-		instructions[best] = instructions_init(headA, b);
+		instructions[best] = instructions_init(head_a, b);
 		ra += 1;
 		instructions[best].ra += ra;
-		instructions[best] = fill_instructions(a->number, b, instructions[best]);
+		instructions[best] = fill_instructions(a->number, b,
+				instructions[best]);
 		if (instructions[0].total < instructions[1].total
 			|| instructions[0].total == instructions[1].total)
 			best = 1;
@@ -97,6 +96,5 @@ t_instructions	best_instructions(t_stack *a, t_stack *b)
 		best = 0;
 	else
 		best = 1;
-//	ft_printf("\n\ninstructions : %i\n\n", best);
 	return (instructions[best]);
 }
