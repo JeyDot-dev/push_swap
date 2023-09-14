@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:23:33 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/17 16:57:33 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:50:29 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ void	load_list(int ac, char **av, t_stack **stack)
 	{
 		check = ps_atoi(av[i]);
 		if (check > 2147483647)
-		{
 			error_exit(*stack);
-		}
 		put_top(new_item((int) check), stack);
 		i--;
 	}

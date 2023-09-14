@@ -55,3 +55,6 @@ push_swap
 .DS_Store
 push_swap_visualizer
 imgui.in
+push_swap_test_linux.sh
+traces.txt
+0

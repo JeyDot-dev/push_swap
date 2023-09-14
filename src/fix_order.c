@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 00:31:56 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 04:09:14 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:28:16 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@ void	optimize_fix(int i, int ii, t_stack **a)
 		ii--;
 	}
 }
+
 void	fix_order(t_stack **a)
 {
-	int	i;
-	int	index;
-	int	smallest;
+	int		i;
+	int		index;
+	int		smallest;
 	t_stack	*tmp;
 
 	if (!a || !*a)
-		return;
+		return ;
 	tmp = *a;
 	smallest = tmp->number;
 	index = 0;

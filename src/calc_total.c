@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:54:17 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 03:37:23 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:35:02 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,81 +19,65 @@ t_instructions	simplify_total(t_instructions instructions)
 		instructions.ra -= 1;
 		instructions.rb -= 1;
 		instructions.rr += 1;
-
 	}
 	while (instructions.rra > 0 && instructions.rrb > 0)
 	{
 		instructions.rra -= 1;
 		instructions.rrb -= 1;
 		instructions.rrr += 1;
-
 	}
 	while (instructions.sa > 0 && instructions.sb > 0)
 	{
 		instructions.sa -= 1;
 		instructions.sb -= 1;
 		instructions.ss += 1;
-
 	}
 	return (instructions);
 }
-t_instructions	instructions_variant(t_instructions instructions, int mode)
+t_instructions	instructions_variant(t_instructions lel, int mode)
 {
 	if (mode == 1)
 	{
-		instructions.ra = 0;
-		instructions.rb = 0;
+		lel.ra = 0;
+		lel.rb = 0;
 	}
-	else if(mode == 2)
+	else if (mode == 2)
 	{
-		instructions.rra = 0;
-		instructions.rrb = 0;
+		lel.rra = 0;
+		lel.rrb = 0;
 	}
-	else if(mode == 3)
+	else if (mode == 3)
 	{
-		instructions.ra = 0;
-		instructions.rrb = 0;
+		lel.ra = 0;
+		lel.rrb = 0;
 	}
 	else if(mode == 4)
 	{
-		instructions.rra = 0;
-		instructions.rb = 0;
+		lel.rra = 0;
+		lel.rb = 0;
 	}
-	return (instructions);
+	return (lel);
 }
-/*
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int	sa;
-	int	sb;
-	int	ss;
-	int	pa;
-	int	pb;
-	int	score;
-	int	total;
-	*/
-t_instructions	calc_total(t_instructions instructions)
+
+t_instructions	calc_total(t_instructions lel)
 {
-	instructions.total = 0;
-	instructions = simplify_total(instructions);
-	instructions.total += instructions.ra;
-	instructions.total += instructions.rb;
-	instructions.total += instructions.rr;
-	instructions.total += instructions.rra;
-	instructions.total += instructions.rrb;
-	instructions.total += instructions.rrr;
-	instructions.total += instructions.sa;
-	instructions.total += instructions.sb;
-	instructions.total += instructions.ss;
-	instructions.total += instructions.pa;
-	instructions.total += instructions.pb;
-	return (instructions);
+	lel.total = 0;
+	lel = simplify_total(lel);
+	lel.total += lel.ra;
+	lel.total += lel.rb;
+	lel.total += lel.rr;
+	lel.total += lel.rra;
+	lel.total += lel.rrb;
+	lel.total += lel.rrr;
+	lel.total += lel.sa;
+	lel.total += lel.sb;
+	lel.total += lel.ss;
+	lel.total += lel.pa;
+	lel.total += lel.pb;
+	return (lel);
 }
-t_instructions	best_total(t_instructions instructions)
+
+t_instructions	best_total(t_instructions lel)
 {	
 	int	i;
 	int	index;
@@ -101,13 +85,10 @@ t_instructions	best_total(t_instructions instructions)
 	t_instructions	incts[4];
 
 	i = -1;
-	instructions.rra = instructions.sizeA - instructions.ra;
-	instructions.rrb = instructions.sizeB - instructions.rb;
-//	ft_printf("--PREcalc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, sizeA:%i, sizeB:%i total:%i\n", instructions.ra, instructions.rra,
-//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa,
-//				instructions.sizeA, instructions.sizeB, instructions.total);
+	lel.rra = lel.size_a - lel.ra;
+	lel.rrb = lel.size_b - lel.rb;
 	while (++i < 4)
-		incts[i] = calc_total(instructions_variant(instructions, i + 1));
+		incts[i] = calc_total(instructions_variant(lel, i + 1));
 	i = 0;
 	index = 0;
 	tmp = incts[i].total;
@@ -116,8 +97,5 @@ t_instructions	best_total(t_instructions instructions)
 		if (incts[i].total < tmp)
 			index = i;
 	}
-//	ft_printf("calc : ra:%i, rra:%i, rb:%i, rrb:%i, rr:%i, rrr:%i, pa:%i, sizeA:%i, sizeB:%i total:%i\n", instructions.ra, instructions.rra,
-//				instructions.rb, instructions.rrb, instructions.rr, instructions.rrr, instructions.pa,
-//				instructions.sizeA, instructions.sizeB, instructions.total);
 	return (incts[index]);
 }
