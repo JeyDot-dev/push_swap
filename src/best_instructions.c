@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 13:22:15 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/16 14:46:35 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 16:16:25 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,5 @@ t_instructions	best_instructions(t_stack *a, t_stack *b)
 		a = a->next;
 	}
 	best = swap_int_fun_bc_too_long_lol(best);
-	return (instructions[best]);
+	return (in[best]);
 }
