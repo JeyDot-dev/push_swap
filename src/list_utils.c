@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 13:24:44 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/14 18:22:19 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:47:25 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ t_stack	*find_penultimate(t_stack *head)
 		return (NULL);
 	return (head);
 }
-t_stack *find_last(t_stack *head)
+
+t_stack	*find_last(t_stack *head)
 {
 	if (!head)
 		return (NULL);
@@ -55,6 +56,7 @@ t_stack *find_last(t_stack *head)
 	}
 	return (head);
 }
+
 void	print_stacks(t_stack *stackA, t_stack *stackB)
 {
 	ft_printf("----stack A----\t----stack B----\n");

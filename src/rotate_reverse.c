@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:41:15 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/05 10:55:56 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:26:47 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrx(t_stack **stack, char letter)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (*stack && (*stack)->next)
 	{
@@ -36,10 +36,11 @@ void	rrx(t_stack **stack, char letter)
 	if (letter == 'a' || letter == 'b')
 		ft_printf("rr%c\n", letter);
 }
+
 void	rx(t_stack **stack, char letter)
 {
-	t_stack *temp;
-	t_stack *temp_last;
+	t_stack	*temp;
+	t_stack	*temp_last;
 
 	if (*stack && (*stack)->next)
 	{
@@ -55,12 +56,14 @@ void	rx(t_stack **stack, char letter)
 	if (letter == 'a' || letter == 'b')
 		ft_printf("r%c\n", letter);
 }
+
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rrx(stack_a, 'x');
 	rrx(stack_b, 'x');
 	ft_printf("rrr\n");
 }
+
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rx(stack_a, 'x');

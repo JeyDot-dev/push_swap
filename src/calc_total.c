@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:54:17 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/14 18:35:02 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:48:20 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_instructions	simplify_total(t_instructions instructions)
 	}
 	return (instructions);
 }
+
 t_instructions	instructions_variant(t_instructions lel, int mode)
 {
 	if (mode == 1)
@@ -51,7 +52,7 @@ t_instructions	instructions_variant(t_instructions lel, int mode)
 		lel.ra = 0;
 		lel.rrb = 0;
 	}
-	else if(mode == 4)
+	else if (mode == 4)
 	{
 		lel.rra = 0;
 		lel.rb = 0;
@@ -78,10 +79,10 @@ t_instructions	calc_total(t_instructions lel)
 }
 
 t_instructions	best_total(t_instructions lel)
-{	
-	int	i;
-	int	index;
-	int	tmp;
+{
+	int				i;
+	int				index;
+	int				tmp;
 	t_instructions	incts[4];
 
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: jsousa-a <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:07:12 by jsousa-a          #+#    #+#             */
-/*   Updated: 2022/10/13 17:01:17 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:24:38 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			dsttemp[len] = srctemp[len];
 	}
 	else
-	{	
+	{
 		while (len > 0)
 		{
 			*dsttemp = *srctemp;

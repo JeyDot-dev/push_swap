@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 01:58:20 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/14 18:23:39 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:25:14 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -14,6 +14,7 @@
 void	three_sort(t_stack **a)
 {
 	int	num[3];
+
 	while (check_order(*a))
 	{
 		num[0] = (*a)->number;

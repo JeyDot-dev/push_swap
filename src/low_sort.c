@@ -6,14 +6,15 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 01:40:56 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/08 04:31:18 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:30:20 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	find_low(t_stack *a)
 {
-	int index;
+	int	index;
 	int	smallest;
 	int	i;
 
@@ -30,14 +31,13 @@ int	find_low(t_stack *a)
 		i++;
 		a = a->next;
 	}
-//	ft_printf("INDEXT:%i\n", index);
 	return (index);
 }
 
 void	low_sort(t_stack **a, t_stack **b)
 {
 	t_instructions	instructions;
-	int	elements;
+	int				elements;
 
 	if (check_order(*a) == 0)
 		return ;
@@ -46,7 +46,6 @@ void	low_sort(t_stack **a, t_stack **b)
 	{
 		instructions = instructions_init(*a, *b);
 		instructions.ra = find_low(*a);
-//				printf("instructions.ra : %i\n", instructions.ra);
 		cmd_processor(a, b, best_total(instructions));
 		px(a, b, 'b');
 		elements--;

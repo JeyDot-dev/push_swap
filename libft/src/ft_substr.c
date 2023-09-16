@@ -6,13 +6,13 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 10:51:14 by jsousa-a          #+#    #+#             */
-/*   Updated: 2022/11/20 15:54:17 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:24:46 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
-{	
+{
 	char	*new;
 	size_t	i;
 

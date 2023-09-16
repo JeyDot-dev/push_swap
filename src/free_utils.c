@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:04:25 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/08/17 16:57:49 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:52:43 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	error_exit(t_stack *stack)
 
 void	free_stack(t_stack *head)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	while (head)
 	{

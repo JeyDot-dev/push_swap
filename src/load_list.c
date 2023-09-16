@@ -6,11 +6,12 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:23:33 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/14 18:50:29 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:53:40 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	check_strings_len(int ac, char **av)
 {
 	int	i;
@@ -28,15 +29,15 @@ void	check_strings_len(int ac, char **av)
 		i++;
 	}
 }
+
 void	check_dup(t_stack *a)
 {
 	t_stack	*current;
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		target;
 	int		ct;
 
 	current = a;
-
 	while (current)
 	{
 		target = current->number;
@@ -53,10 +54,11 @@ void	check_dup(t_stack *a)
 		current = current->next;
 	}
 }
+
 void	load_list(int ac, char **av, t_stack **stack)
 {
-	int	i;
-	long long int check;
+	int				i;
+	long long int	check;
 
 	i = ac - 1;
 	check_strings_len(ac, av);

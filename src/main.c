@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 11:24:51 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/14 19:12:23 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/16 14:52:28 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,25 @@ void	cmd_processor(t_stack **a, t_stack **b, t_instructions instructions)
 	while (instructions.rrr-- > 0)
 		rrr(a, b);
 }
+
+void	long_sort(t_stack **a, t_stack **b)
+{
+	t_instructions	instructions;
+
+	px(&a, &b, 'b');
+	px(&a, &b, 'b');
+	while (*a)
+	{
+		instructions = best_instructions(*a, *b);
+		cmd_processor(a, b, instructions);
+		px(&a, &b, 'b');
+	}
+}
+
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_stack			*a;
+	t_stack			*b;
 	t_instructions	instructions;
 
 	a = NULL;
@@ -45,14 +60,6 @@ int	main(int ac, char **av)
 	}
 	if (count_elements(a) > 10)
 	{
-		px(&a, &b, 'b');
-		px(&a, &b, 'b');
-		while (a)
-		{
-			instructions = best_instructions(a, b);
-			cmd_processor(&a, &b, instructions);
-			px(&a, &b, 'b');
-		}
 	}
 	else
 		low_sort(&a, &b);
