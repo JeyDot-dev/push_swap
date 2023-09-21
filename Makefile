@@ -31,10 +31,9 @@ UNAME_S 	:= $(shell uname -s)
 SRC_D		:=	src/
 BUILD_D		:=	.build/
 LIB_D		:=	libft/
-INC			:=	libft/inc/	inc/
-
 LIB			:=	ft
-INC			:=	inc/ libft/
+INC			:=	libft/inc	inc
+
 SRC			:=	best_instructions.c check_order.c list_utils.c load_list.c pswap_atoi.c smallest_biggest.c \
 				calc_total.c free_utils.c list_utils_two.c swap_push.c rotate_reverse.c main.c fix_order.c	\
 				low_sort.c three_sort.c
