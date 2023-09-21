@@ -6,7 +6,7 @@
 /*   By: jsousa-a <jsousa-a@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:16:03 by jsousa-a          #+#    #+#             */
-/*   Updated: 2023/09/16 16:17:40 by jsousa-a         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:23:15 by jsousa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 long long int	too_many_lines(const char *str, long long int nb, int isneg)
 {
+	if (isneg == 1)
+		nb *= -1;
 	if (*str || nb > 2147483647 || nb < -2147483648)
 		return (2147483648);
-	if (isneg == 1)
-		return (nb *= -1);
 	return (nb);
 }
 
