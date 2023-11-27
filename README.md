@@ -4,7 +4,7 @@
 2. [Project Goals](#project-goals)
 3. [Game Rules](#game-rules)
     - [Operations](#operations)
-4. [The `push_swap` Program](#the-push_swap-program)
+4. [The push_swap Program](#the-push_swap-program)
     - [Usage](#usage)
 5. [Getting Started](#getting-started)
     1. [Clone the Repository](#1-clone-the-repository)
@@ -43,7 +43,7 @@ Push_swap is a sorting algorithm project that challenges your ability to manipul
 - `rrb`: Reverse rotate all elements of 'b' down by 1.
 - `rrr`: Simultaneous 'rra' and 'rrb.'
 
-## The `push_swap` Program
+## The push_swap Program
 
 ### Usage:
 
