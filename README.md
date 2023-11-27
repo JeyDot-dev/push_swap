@@ -1,5 +1,9 @@
 # Push_swap
 
+## Overview
+
+Push_swap is a sorting algorithm project that challenges your ability to manipulate data on two stacks, 'a' and 'b,' using a limited set of instructions. The goal is to achieve the lowest number of actions possible by implementing and optimizing various sorting algorithms.
+
 1. [Overview](#overview)
 2. [Project Goals](#project-goals)
 3. [Game Rules](#game-rules)
@@ -11,10 +15,6 @@
     2. [Compile the Program](#2-compile-the-program)
     3. [Run the Program](#3-run-the-program)
     4. [Example](#4-example)
-
-## Overview
-
-Push_swap is a sorting algorithm project that challenges your ability to manipulate data on two stacks, 'a' and 'b,' using a limited set of instructions. The goal is to achieve the lowest number of actions possible by implementing and optimizing various sorting algorithms.
 
 ## Project Goals
 
